@@ -84,6 +84,7 @@ function addActor(){
 */
 function getLosses(){
     // Your answer here:
+    return film.boxoffice - film.budget;
 }
 
 
@@ -103,6 +104,12 @@ let letterVals = [ "v", "x", "r", "f", "p" ];
 function interleave(){
     let vals = [];
     // Your answer here:
+    for(i=0;i<numberVals.length;i++){
+      let rows = []
+      rows.push((letterVals[i] + numberVals[i]))
+      vals.push(rows)
+    }
+    return vals;
 }
 
 
@@ -120,4 +127,13 @@ let second = [ "think", "stand", "cheese", "break", "numinous", "mouse", "close"
 function union(){
     let same = [];
     // Your answer here:
+    for(i=0;i<second.length;i++){
+      for(j=0;j<=i;j++)
+      {
+        if(first[i] === second[j]){
+          same.push(first[i]);
+        }
+      }
+    }
+    return same;
 }
